@@ -1,11 +1,9 @@
-# The name of your desired GBA game
-# This should be a just a name i.e MyFirstGBAGame
-# No SPACES AFTER THE NAME.
+# THIS FILE IS NOT INTENDED TO BE USED FOR CS2110 STUFF
 PROGNAME = mode3
 
 # The object files you want to compile into your program
 # This should be a space (SPACE!) separated list of .o files
-OFILES = main.o ../shared/myLib.o background.o imageinfo.o
+OFILES = ../shared/myLib.o background.o imageinfo.o
 
 # The header files you have created.
 # This is necessary to determine when to recompile for files.
@@ -49,7 +47,7 @@ $(PROGNAME).gba : $(PROGNAME).elf
 	@echo "[LINK] Linking objects together to create $(PROGNAME).gba"
 	@$(OBJCOPY) -O binary $(PROGNAME).elf $(PROGNAME).gba
 
-$(PROGNAME).elf : crt0.o $(OFILES)
+$(PROGNAME).elf : crt0.o $(OFILES) main.o
 	@$(LD) $(LDFLAGS) -o $(PROGNAME).elf $^ -lgcc -lc -lgcc $(LDDEBUG)
 	@rm -f *.d
 
