@@ -1,1 +1,1 @@
-nin10kit -mode=4 pokemon pikachu.png jigglypuff.gif dragonite.png
+nin10kit -mode=4 images image1.png image2.gif image3.png
