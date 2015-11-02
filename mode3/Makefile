@@ -60,7 +60,7 @@ crt0.o : $(ARMLIB)/crt0.s
 
 clean :
 	@echo "[CLEAN] Removing all compiled files"
-	@rm -f *.o *.elf *.gba *.d
+	@rm -f $(OFILES) *.elf *.gba *.d
 
 vba : CFLAGS += $(CRELEASE)
 vba : $(PROGNAME).gba
@@ -83,6 +83,6 @@ debugwxvba : $(PROGNAME).gba
 	@wxvbam $(PROGNAME).gba
 
 obfuscate: main.c
-	@$(CC) $(CFLAGS) -S main.c -o main.s
+	@$(CC) $(CFLAGS) -c main.c -o main.o
 
 -include $(CFILES:%.c=%.d)
