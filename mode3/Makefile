@@ -23,7 +23,7 @@ LDFLAGS = -L $(TOOLDIR)/lib \
 		  -L $(TOOLDIR)/lib/gcc/arm-thumb-eabi/4.4.1/thumb \
 		  -L $(ARMLIB) \
 		  --script $(ARMLIB)/arm-gba.ld
-LDDEBUG  = -L $(TOOLDIR)/lib -lgbaio
+LDDEBUG  = -L $(TOOLDIR)/lib
 CDEBUG   = -g -DDEBUG
 CRELEASE = -O2
 CC       = $(TOOLDIR)/bin/arm-thumb-eabi-gcc
@@ -47,8 +47,8 @@ $(PROGNAME).gba : $(PROGNAME).elf
 	@echo "[LINK] Linking objects together to create $(PROGNAME).gba"
 	@$(OBJCOPY) -O binary $(PROGNAME).elf $(PROGNAME).gba
 
-$(PROGNAME).elf : crt0.o $(OFILES) main.o
-	@$(LD) $(LDFLAGS) -o $(PROGNAME).elf $^ -lgcc -lc -lgcc $(LDDEBUG)
+$(PROGNAME).elf : crt0.o $(OFILES)
+	@$(LD) $(LDFLAGS) -o $(PROGNAME).elf $^ main.o -lgcc -lc -lgcc $(LDDEBUG)
 	@rm -f *.d
 
 crt0.o : $(ARMLIB)/crt0.s
