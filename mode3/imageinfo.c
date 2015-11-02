@@ -1,5 +1,4 @@
-// Modification not needed the image is resized to 240 by 160
+#include "background.h"
 
-const int background_width = 240;
-const int background_height = 160;
-
+const int background_width = BACKGROUND_WIDTH;
+const int background_height = BACKGROUND_HEIGHT;
