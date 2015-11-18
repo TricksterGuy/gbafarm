@@ -1,1 +1,1 @@
-nin10kit -mode=4 -resize=240x160 animation animation.gif
+nin10kit -mode=4 -resize=50x50 animation animation.gif
