@@ -23,4 +23,3 @@ void flipPage(void)
 		videoBuffer = BUFFER0;
 	}
 }
-
