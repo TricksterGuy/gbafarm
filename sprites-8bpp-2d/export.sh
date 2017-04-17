@@ -1,1 +1,1 @@
-nin10kit -mode=sprites -export_2d=1 sprites blue8x8.png burnt2x2.png tiny1x1.png
+nin10kit --mode=sprites --bpp=8 --export_2d sprites blue8x8.png bowser4x4.png tiny1x1.png
