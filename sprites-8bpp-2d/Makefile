@@ -1,7 +1,7 @@
 # The name of your desired GBA game
 # This should be a just a name i.e MyFirstGBAGame
 # No SPACES AFTER THE NAME.
-PROGNAME = sprites8bpp1d
+PROGNAME = sprites8bpp2d
 
 # The object files you want to compile into your program
 # This should be a space (SPACE!) separated list of .o files
