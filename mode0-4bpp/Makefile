@@ -5,7 +5,7 @@ PROGNAME = mode04bpp
 
 # The object files you want to compile into your program
 # This should be a space (SPACE!) separated list of .o files
-OFILES = ../shared/myLib.o sprites.o main.o
+OFILES = ../shared/myLib.o spiral.o main.o
 
 ################################################################################
 # These are various settings used to make the GBA toolchain work

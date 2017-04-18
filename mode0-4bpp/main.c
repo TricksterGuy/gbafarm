@@ -9,17 +9,17 @@ int main(void)
     int i;
     int voff = 0;
     int hoff = 0;
-    for(i=0; i < SPIRAL_TILES_SIZE; i++)
+    for(i=0; i < SPIRAL_TILES_LENGTH; i++)
     {
         CHARBLOCKBASE[0].tileimg[i] = spiral_tiles[i];
     }
 
-    for(i=0; i < SPIRAL_MAP_SIZE; i++)
+    for(i=0; i < SPIRAL_MAP_LENGTH; i++)
     {
         SCREENBLOCKBASE[28].tilemap[i] = spiral[i];
     }
 
-    for(i=0; i<SPIRAL_PALETTE_SIZE; i++)
+    for(i=0; i<SPIRAL_PALETTE_LENGTH; i++)
     {
         PALETTE[i] = spiral_palette[i];
     }
