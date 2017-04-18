@@ -31,7 +31,7 @@ int main(void)
     OamEntry* dog = shadow;
 	dog->attr0 = 48 | DOG_PALETTE_TYPE | DOG_SPRITE_SHAPE;
 	dog->attr1 = 88 | DOG_SPRITE_SIZE;
-	// Bug, well not for this image, but if the frames get matched to separate palettes this could be a problem.
+	// Bug, well not for this image at least, if the frames get matched to separate palettes this could be a problem.
 	// Currently we don't have an array of palette_ids here.
 	dog->attr2 = DOG0_PALETTE_ID | dog_frames[0];
 
