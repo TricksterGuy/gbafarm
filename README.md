@@ -12,6 +12,10 @@ sudo add-apt-repository ppa:tricksterguy87/ppa-gt-cs2110
 sudo apt-get update
 sudo apt-get install gcc-arm-none-eabi cs2110-vbam-sdl cs2110-gba-linker-script nin10kit
 ```
+If you are on Linux Mint the following line may also need to be ran
+```
+sudo apt-get install libnewlib-arm-none-eabi
+```
 
 Troubleshooting if there is an error about not being able to find -lc you will need to install the libnewlib-arm-none-eabi package
 
