@@ -1,6 +1,6 @@
 OUTPUT := main
 CPPFLAGS := -Wall
-CC := gcc -std=c99 -Wall
+CC := gcc -std=c99 -Wall -pedantic
 FILES := main.o \
 	sin_lut.o \
 	cos_lut.o
