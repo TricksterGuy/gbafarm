@@ -42,8 +42,11 @@ typedef const volatile signed int cvs32;
 
 // Modes
 #define MODE0 0
+#define MODE1 1
+#define MODE2 2
 #define MODE3 3
 #define MODE4 4
+#define MODE5 5
 
 // Backgrounds
 #define BG0_ENABLE (1<<8)
@@ -58,12 +61,28 @@ typedef const volatile signed int cvs32;
 #define BUFFERFLAG  0x10
 #define PALETTE ((u16*)0x5000000)
 
+// Mode 0/1/2 -------------------------------------------------------------------------------
 //background control registers
 #define REG_BG0CNT *(vu16*)0x4000008
 #define REG_BG1CNT *(vu16*)0x400000A
 #define REG_BG2CNT *(vu16*)0x400000C
 #define REG_BG3CNT *(vu16*)0x400000E
 
+
+//affine background control registers
+#define REG_BG2PA *(vs16*)0x4000020
+#define REG_BG2PB *(vs16*)0x4000022
+#define REG_BG2PC *(vs16*)0x4000024
+#define REG_BG2PD *(vs16*)0x4000026
+#define REG_BG2X  *(vs32*)0x4000028
+#define REG_BG2Y  *(vs32*)0x400002c
+
+#define REG_BG3PA *(vs16*)0x4000030
+#define REG_BG3PB *(vs16*)0x4000032
+#define REG_BG3PC *(vs16*)0x4000034
+#define REG_BG3PD *(vs16*)0x4000036
+#define REG_BG3X  *(vs32*)0x4000038
+#define REG_BG3Y  *(vs32*)0x400003c
 
 // Useful macros
 #define OFFSET(r,c,rowlen) ((r)*(rowlen) + (c))
@@ -236,6 +255,8 @@ typedef struct { u16 tilemap[1024]; } screenblock;
 #define REG_BG1VOFS *(vu16*)0x04000016
 #define REG_BG2VOFS *(vu16*)0x0400001A
 #define REG_BG3VOFS *(vu16*)0x0400001E
+
+//affine background offset registers
 
 //macros and bit constants for setting the background control register specifics
 #define SBB(num) ((num) << 8)
